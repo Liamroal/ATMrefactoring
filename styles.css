@@ -6,6 +6,7 @@ button {
 }
 
 select {
+  background-color: blue;
   display: block;
   margin-bottom: 20px;
 }
