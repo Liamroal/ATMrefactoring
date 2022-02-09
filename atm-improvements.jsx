@@ -1,8 +1,8 @@
 const ATMDeposit = ({ onChange, isDeposit, validTransaction }) => {
   const choice = ['Deposit', 'Cash Back'];
   console.log(`ATM isDeposit: ${isDeposit}`);
-  //let isValid = true; //CMB Esto no es lo que se pide, no entiendo qué se pide para este punto
-  let isValid = ! validTransaction; //Porqué puedo acceder a validTransaction aquí?
+  
+  let isValid = ! validTransaction; 
   console.log("isValid: ", isValid);
   return (
     <label className="label huge">
@@ -13,13 +13,13 @@ const ATMDeposit = ({ onChange, isDeposit, validTransaction }) => {
   );
 };
 
-//<input type="submit" width="200" value="Submit" id="submit-input" disabled = {isValid}></input>
+
 
 const Account = () => {
   const [deposit, setDeposit] = React.useState(0);
   const [totalState, setTotalState] = React.useState(0);
   const [isDeposit, setIsDeposit] = React.useState(true);
-  const [atmMode,setAtmMode] = React.useState(""); //CMB Selector drop list
+  const [atmMode,setAtmMode] = React.useState(""); 
   const [validTransaction, setValidTransaction] = React.useState(false);
 
   let status = `Account Balance $ ${totalState} `;
@@ -51,7 +51,7 @@ const Account = () => {
   const handleModeSelect = (event) => {   
     setAtmMode(event.target.value); //CMB   
     console.log("Seleccionado: ", event.target.value);    
-    //console.log("Variable atmMode: ", atmMode);
+   
     if (event.target.value === "Deposit") {
       setIsDeposit(true);
       console.log("Variable atmMode inside if Deposit: ", atmMode);
